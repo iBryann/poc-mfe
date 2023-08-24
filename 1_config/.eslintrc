@@ -1,0 +1,5 @@
+{
+  "extends": ["ts-important-stuff"],
+  "parser": "@babel/eslint-parser",
+  "plugins": ["@babel"]
+}
