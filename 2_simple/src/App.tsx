@@ -2,7 +2,7 @@ import { LifeCycles, navigateToUrl } from 'single-spa';
 import Parcel from 'single-spa-react/parcel';
 
 //@ts-ignore
-import { showMessage } from '@bb/utils';
+import { showMessage, Section } from '@bb/utils';
 //@ts-ignore
 import { useCounterStore, Widget } from '@bb/states';
 import { Container, ParcelContainer } from './styles';
@@ -15,6 +15,8 @@ export const App = (props) => {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>{props.name} is mounted!</h1>
+
+      <Section name="BRYANN" />
 
       <Container>
         <a href="/routes" onClick={(event) => navigateToUrl(event)}>

@@ -10,7 +10,7 @@ import { TApp } from './@types';
 import { generateTemplate } from './utils/template';
 
 axios
-  .get<TApp[]>('http://localhost:9000/applications.json')
+  .get<TApp[]>('/applications.json')
   .then(({ data: apps }) => {
     const template = generateTemplate(apps);
 
