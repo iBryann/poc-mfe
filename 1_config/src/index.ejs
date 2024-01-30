@@ -34,14 +34,16 @@
           "@bb/routes": "//localhost:9002/bb-routes.js",
           "@bb/utils": "//localhost:9003/bb-utils.js",
           "@bb/states": "//localhost:9004/bb-states.js",
-          "@bb/parcel": "//localhost:9005/bb-parcel.js"
+          "@bb/parcel": "//localhost:9005/bb-parcel.js",
+          "@bb/404": "//localhost:9006/bb-404.js"
         <% } else { %>
           "@bb/root-config": "http://localhost:8080/bb-root-config.js",
           "@bb/simple": "http://localhost:8080/bb-simple.js",
           "@bb/routes": "http://localhost:8080/bb-routes.js",
           "@bb/utils": "http://localhost:8080/bb-utils.js",
           "@bb/states": "http://localhost:8080/bb-states.js",
-          "@bb/parcel": "http://localhost:8080/bb-parcel.js"
+          "@bb/parcel": "http://localhost:8080/bb-parcel.js",
+          "@bb/404": "http://localhost:8080/bb-404.js"
         <% } %>
       }
     }
@@ -60,10 +62,11 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-  <main></main>
+
   <script>
     System.import('@bb/root-config');
   </script>
+
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
 </html>

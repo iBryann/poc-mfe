@@ -1,10 +1,10 @@
-import { LifeCycles, navigateToUrl } from "single-spa";
+import { LifeCycles, navigateToUrl } from 'single-spa';
 import Parcel from 'single-spa-react/parcel';
 
 //@ts-ignore
 import { showMessage } from '@bb/utils';
 //@ts-ignore
-import { useCounterStore, Widget } from "@bb/states";
+import { useCounterStore, Widget } from '@bb/states';
 import { Container, ParcelContainer } from './styles';
 
 export const App = (props) => {
@@ -17,7 +17,9 @@ export const App = (props) => {
       <h1>{props.name} is mounted!</h1>
 
       <Container>
-        <a href="/routes" onClick={event => navigateToUrl(event)}>Goto /routes</a>
+        <a href="/routes" onClick={(event) => navigateToUrl(event)}>
+          Goto /routes
+        </a>
       </Container>
 
       <div>
@@ -30,20 +32,18 @@ export const App = (props) => {
       <hr />
 
       <p>
-        <button onClick={() => showMessage('Olá!')}>
-          Show message
-        </button>
+        <button onClick={() => showMessage('Olá!')}>Show message</button>
       </p>
 
       <ParcelContainer>
         <Parcel
           config={() => System.import<LifeCycles>('@bb/parcel')}
           wrapWith="div"
-          wrapClassName='my-widget'
+          wrapClassName="my-widget"
         />
 
         <Widget />
       </ParcelContainer>
     </div>
   );
-}
+};

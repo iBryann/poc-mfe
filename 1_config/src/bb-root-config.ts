@@ -1,24 +1,28 @@
-import { registerApplication, start, LifeCycles } from "single-spa";
+import axios from 'axios';
+import { registerApplication, start } from "single-spa";
+import {
+  constructApplications,
+  constructRoutes,
+  constructLayoutEngine,
+} from "single-spa-layout";
 
-registerApplication({
-  name: "@bb/simple",
-  app: () => System.import<LifeCycles>("@bb/simple"),
-  activeWhen: location => location.pathname === "/",
-  customProps(appName, location) {
-    return {
-      appName,
-      location: location.pathname,
-      authToken: localStorage.getItem('@auth') || 'vazio'
-    }
-  }
-});
+import { TApp } from './@types';
+import { generateTemplate } from './utils/template';
 
-registerApplication({
-  name: "@bb/routes",
-  app: () => System.import<LifeCycles>("@bb/routes"),
-  activeWhen: ["/routes"],
-});
+axios
+  .get<TApp[]>('http://localhost:9000/applications.json')
+  .then(({ data: apps }) => {
+    const template = generateTemplate(apps);
+    const routes = constructRoutes(template);
+    const applications = constructApplications({
+      routes,
+      loadApp({ name }) {
+        return System.import(name);
+      },
+    });
+    const layoutEngine = constructLayoutEngine({ routes, applications });
 
-start({
-  urlRerouteOnly: true,
-});
+    applications.forEach(registerApplication);
+    layoutEngine.activate();
+    start();
+  });
