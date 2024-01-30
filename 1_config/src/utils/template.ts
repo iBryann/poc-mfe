@@ -3,7 +3,7 @@ import { TApp } from '../@types';
 export function generateRoutes(apps: TApp[]) {
   const htmlRoutes = apps.map(({ exact, name, path }) => `
     <route path="${path}" ${exact ? 'exact' : ''}>
-      <application name="${name}"></application>
+      <application name="${name}" loader="loader"></application>
     </route>
   `);
 

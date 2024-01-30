@@ -13,7 +13,13 @@ axios
   .get<TApp[]>('http://localhost:9000/applications.json')
   .then(({ data: apps }) => {
     const template = generateTemplate(apps);
-    const routes = constructRoutes(template);
+
+    const routes = constructRoutes(template, {
+      loaders: {
+        loader: "<h1>Loading...</h1>",
+      },
+    } as any);
+
     const applications = constructApplications({
       routes,
       loadApp({ name }) {
@@ -24,5 +30,8 @@ axios
 
     applications.forEach(registerApplication);
     layoutEngine.activate();
+
+    document.getElementById('loader').remove();
+
     start();
   });
