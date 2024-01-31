@@ -19,7 +19,7 @@ export const App = (props) => {
       <Section name="BRYANN" />
 
       <Container>
-        <a href="/routes" onClick={(event) => navigateToUrl(event)}>
+        <a href="/routes" onClick={navigateToUrl}>
           Goto /routes
         </a>
       </Container>
