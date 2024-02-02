@@ -10,13 +10,11 @@ import { Container, ParcelContainer } from './styles';
 export const App = (props) => {
   const { count: state, decrement, increment } = useCounterStore();
 
-  console.log(props);
-
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>{props.name} is mounted!</h1>
 
-      <Section name="BRYANN" />
+      <Section name="Bryann" />
 
       <Container>
         <a href="/routes" onClick={navigateToUrl}>

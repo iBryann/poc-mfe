@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+    "react": "https://unpkg.com/react@17.0.2/umd/react.production.min.js",
+    "react-dom": "https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js",
+    "@emotion/react": "https://cdn.jsdelivr.net/npm/@emotion/react@11.1.1/dist/emotion-react.umd.min.js",
+    "@emotion/styled": "https://cdn.jsdelivr.net/npm/@emotion/styled@11.11.0/dist/emotion-styled.umd.min.js"
+  }
+}

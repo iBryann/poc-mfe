@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "@bb/root-config": "//localhost:9000/bb-root-config.js",
+    "@bb/simple": "//localhost:9001/bb-simple.js",
+    "@bb/routes": "//localhost:9002/bb-routes.js",
+    "@bb/utils": "//localhost:9003/bb-utils.js",
+    "@bb/states": "//localhost:9004/bb-states.js",
+    "@bb/parcel": "//localhost:9005/bb-parcel.js"
+  }
+}

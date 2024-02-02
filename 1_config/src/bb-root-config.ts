@@ -1,25 +1,15 @@
 import axios from 'axios';
 import { registerApplication, start } from "single-spa";
-import {
-  constructApplications,
-  constructRoutes,
-  constructLayoutEngine,
-} from "single-spa-layout";
+import { constructApplications, constructRoutes, constructLayoutEngine } from "single-spa-layout";
 
 import { TApp } from './@types';
-import { generateTemplate } from './utils/template';
+import { genRoutes } from './utils/routes';
 
 axios
   .get<TApp[]>('/applications.json')
   .then(({ data: apps }) => {
-    const template = generateTemplate(apps);
-
-    const routes = constructRoutes(template, {
-      loaders: {
-        loader: "<h1>Loading...</h1>",
-      },
-    } as any);
-
+    const template = genRoutes(apps);
+    const routes = constructRoutes(template);
     const applications = constructApplications({
       routes,
       loadApp({ name }) {
@@ -30,8 +20,5 @@ axios
 
     applications.forEach(registerApplication);
     layoutEngine.activate();
-
-    document.getElementById('loader').remove();
-
     start();
   });

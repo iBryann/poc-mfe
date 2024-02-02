@@ -2,11 +2,13 @@
   {
     "name": "@bb/simple",
     "exact": true,
-    "path": "/"
+    "path": "/",
+    "routes": []
   },
   {
     "name": "@bb/routes",
     "exact": false,
-    "path": "/routes"
+    "path": "/routes",
+    "routes": []
   }
 ]
