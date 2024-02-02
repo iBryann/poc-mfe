@@ -4,7 +4,7 @@ import page404 from '../template/404.html';
 function genRoute({ exact, name, path }: TApp) {
   return `
     <route path="${path}" ${exact ? 'exact' : ''}>
-      <application name="${name}"></application>
+    <application name="${name}" loader="loader"></application>
     </route>
   `;
 }

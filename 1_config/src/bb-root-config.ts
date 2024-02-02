@@ -4,12 +4,17 @@ import { constructApplications, constructRoutes, constructLayoutEngine } from "s
 
 import { TApp } from './@types';
 import { genRoutes } from './utils/routes';
+import loaderHTML from './template/loader.html';
 
 axios
   .get<TApp[]>('/applications.json')
   .then(({ data: apps }) => {
     const template = genRoutes(apps);
-    const routes = constructRoutes(template);
+    const routes = constructRoutes(template, {
+      loaders: {
+        loader: loaderHTML,
+      },
+    } as any);
     const applications = constructApplications({
       routes,
       loadApp({ name }) {
@@ -21,4 +26,6 @@ axios
     applications.forEach(registerApplication);
     layoutEngine.activate();
     start();
+
+    document.getElementById('loader').remove();
   });
