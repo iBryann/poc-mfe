@@ -3,8 +3,19 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "declarationDir": "../dist",
+    "paths": {
+      "@/*": [
+        "../5_states/src/*"
+      ]
+    },
   },
-  "files": ["src/bb-simple.tsx"],
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.test*"]
+  "files": [
+    "src/bb-simple.tsx"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/**/*.test*"
+  ]
 }

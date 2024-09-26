@@ -48,5 +48,5 @@
     "single-spa": "^5.9.3",
     "single-spa-react": "^4.3.1"
   },
-  "types": "dist/bb-utils.d.ts"
+  "types": "../dist/bb-utils.d.ts"
 }

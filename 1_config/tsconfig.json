@@ -1,9 +1,15 @@
 {
   "extends": "ts-config-single-spa",
-  "files": ["src/bb-root-config.ts"],
+  "files": [
+    "src/bb-root-config.ts"
+  ],
   "compilerOptions": {
-    "declarationDir": "../dist"
+    "declarationDir": "../dist",
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.test*"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/**/*.test*"
+  ],
 }

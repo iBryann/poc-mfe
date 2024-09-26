@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import singleSpaReact from "single-spa-react";
 
-import { Widget } from './Widget';
+import { Widget } from "./Widget";
 
 const lifecycles = singleSpaReact({
   React,
